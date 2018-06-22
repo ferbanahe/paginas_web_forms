@@ -30,3 +30,14 @@ textarea {
     width: 20rem;
     height: 10rem;;
 }
+*:required {
+    border:1px solid red;
+    color: crimson;
+    /* box-shadow: 2rem 2rem 2 rem 2 rem gray; */
+}
+input[type="checkbox"] {
+    color:green;
+    width: 6rem;
+    background-color: aquamarine;
+    border: 1px solid red;
+}
