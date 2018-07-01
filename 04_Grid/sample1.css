@@ -34,7 +34,7 @@ body{
     grid-auto-rows: 12vh;
 }
 .grid-container {
-    grid-template-columns: repeat(auto-fill, 1fr);
-    grid-template-rows:  repeat(10vh 15vh) ;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    grid-template-rows:  repeat(2, 10vh 15vh) ;
     grid-auto-rows: 12vh;
 }
