@@ -1,0 +1,79 @@
+//- -var idioma = "es"
+//- -const METALENGUAJE = "Pug"
+//- -let titulo = `Iniciando ${METALENGUAJE}`
+//- -let menuItems = ['Home', 'About']
+
+doctype
+html(lang=idioma)
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        //- title #{titulo}
+        title= titulo
+
+    body
+
+        // Esto es un comentario
+
+        // Esto es un comentario 
+            de varias líneas, usando un tabulador para estar en el mismo comentario y un espacuio al final de usando para que se respete
+
+        //-Esto es un comentario solo de Pug
+
+        //- Esto es un comentario solo de Pug 
+            de varias líneas
+
+        //-Añadiendo contenido en varias líneas
+
+        pre
+            |Lorem ipsum dolor sit amet consectetur,
+            |adipisicing elit.
+            |Omnis, sint assumenda praesentium doloribus laborum voluptatem,
+            |nemo rerum recusandae velit,
+            | fugit unde reprehenderit a minus voluptas placeat iste id laboriosam optio?
+        
+        pre.
+            Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit.
+            Omnis, sint assumenda praesentium doloribus laborum voluptatem,
+            nemo rerum recusandae velit,
+            fugit unde reprehenderit a minus voluptas placeat iste id laboriosam optio?
+
+        // Elementos inline
+
+        h1 Ejemplos de 
+            i #{METALENGUAJE.toUpperCase()}
+
+        p Pug es un 
+            b lenguaje de plantillas 
+            | basado en JS
+
+        p Pug es un <b>lenguaje de plantillas</b> basado en JS
+
+        //- Atributos
+
+        div(id="div1", clas="principal")
+
+        //-ATAJOS. Atributos
+
+        div#div2.principal
+
+        #div3.principal
+
+        //-Bloques de expansión usando : entre li y a
+
+        nav
+            ul
+                - let url = "#"+menuItems[0].toLowerCase()
+                li: a(href=url) #{menuItems[0]}
+                - url = './page1.html'
+                li: a(href=url) #{menuItems[1]}
+                li
+                    a(href="#"+menuItems[2].toLowerCase()) #{menuItems[2]}
+             
+
+    //- Variables con HTML
+    -let html = "<script>alert('Estas infectado')</script>"
+    //- div! siginifica que lo aplique como queremos
+    div!= html
