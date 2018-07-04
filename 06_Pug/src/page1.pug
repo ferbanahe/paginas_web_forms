@@ -19,7 +19,7 @@ html(lang="idioma")
 
         //- Lógica nativa (built-in) Pug
 
-        //- Copndicional IF
+        //- Condicional IF
 
         //- - nombre = "Pepe"
         - nombre = "Rosa"
@@ -42,7 +42,7 @@ html(lang="idioma")
 
         //- Iteraciones EACH
 
-        - let aSecciones = ['Inicio', 'Porfolio', 'Clientess', 'About']
+        - let aSecciones = ['Inicio', 'Porfolio', 'Clientes', 'About']
         nav
             ul
                 each seccion in aSecciones
@@ -57,7 +57,17 @@ html(lang="idioma")
             each opcion in aOpciones
                 option(value=opcion.codigo)= opcion.nombre
             button(type="submit") Enviar
-                
+
+
+        //- Iteraciones WHILE
+
+        - let aSections = ['Home', 'Porfolio', 'Clients', 'About']
+        nav
+            ul
+                - let i = 0
+                while i < aSections.length
+                     li: a(href="#"+aSections[i].toLowerCase())= aSections[i]
+                     -i++  
             
 
 
