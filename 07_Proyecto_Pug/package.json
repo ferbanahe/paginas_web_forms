@@ -4,27 +4,32 @@
   "description": "Ejercicio de CSS. unidad 3 del módulo 1",
   "main": "index.js",
   "scripts": {
-    "start": "parallelshell \"npm run srv\" \"npm run pug:w\"",
+    "start": "parallelshell \"npm run srv\" \"npm run pug:w\" \"npm run sass:watch\"",
+    "start:parcial": "parallelshell \"npm run srv\"  \"npm run sass:w\" \"npm run pug:w\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pug": "pug -P -O ./config.json -p ./src/partials ./src/pug -o ./dist",
-    "pug:w": "pug -w -P -O ./config.json ./src/pug -o ./dist",
-    "srv": "http-server"
+    "pug:w": "pug -w -P -O ./config.json -p ./src/partials ./src/pug -o ./dist",
+    "srv": "http-server",
+    "sass": "sass src/sass:dist/css",
+    "sass:watch": "nodemon -e scss -x \"npm run sass\"",
+    "sass:w" : "node-sass --watch src/sass -o dist/css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alce65/paginas_web_forms.git"
+    "url": "git+https://github.com/ferbanahe/paginas_web_forms.git"
   },
   "keywords": [],
   "author": "Alejandro Cerezo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alce65/paginas_web_forms/issues"
+    "url": "https://github.com/ferbanahe/paginas_web_forms/issues"
   },
-  "homepage": "https://github.com/alce65/paginas_web_forms#readme",
+  "homepage": "https://github.com/ferbanahe/paginas_web_forms#readme",
   "dependencies": {
     "bootstrap": "^4.1.1"
   },
   "devDependencies": {
+    "node-sass": "^4.9.1",
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6"
   }
